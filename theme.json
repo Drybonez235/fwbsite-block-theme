@@ -76,5 +76,15 @@
 			"blockGap": true
 		}
 	},
+    "blocks": {
+            "core/code": {
+                "allowedBlocks": false
+            },
+            "core/quote": {
+                "allowedBlocks": false
+            },
+            "core/pullquote": {
+                "allowedBlocks": false
+            },
 	"styles": {}
 }
