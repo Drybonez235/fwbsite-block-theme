@@ -74,9 +74,8 @@
 			"customPadding": false,
 			"customMargin": false,
 			"blockGap": true
-		}
-	},
-    "blocks": {
+		},
+        "blocks": {
             "core/code": {
                 "allowedBlocks": false
             },
@@ -85,6 +84,8 @@
             },
             "core/pullquote": {
                 "allowedBlocks": false
-            },
+            }
+        }
+	},
 	"styles": {}
 }
