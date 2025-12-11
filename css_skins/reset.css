@@ -1,0 +1,125 @@
+/* reset.css
+   Modern, accessible reset for a WordPress theme.
+   - Put this first in your stylesheet pipeline (before tokens & components).
+   - Keeps sensible defaults for focus/accessibility.
+*/
+
+/* Use border-box everywhere for predictable sizing */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%; /* prevent font inflation on iOS */
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Remove default body margin, set a reasonable line-height */
+body {
+  margin: 0;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: transparent;
+  color: inherit;
+}
+
+/* Headings, paragraphs and basic typography spacing */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+/* Lists: reset spacing; theme can reintroduce list-style where needed */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Images, video, canvas, svg: responsive by default */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Figures */
+figure {
+  margin: 0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Forms: inherit fonts and basic alignment.
+   Avoid removing outlines — keep focus visible by default. */
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Buttons: sensible default cursor for clickable controls */
+button, [type="button"], [type="reset"], [type="submit"] {
+  cursor: pointer;
+}
+
+/* Links: inherit color by default (theme should style links) */
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* Accessibility: ensure [hidden] obeys display:none */
+[hidden] {
+  display: none !important;
+}
+
+/* Blockquotes and quotes */
+blockquote, q {
+  margin: 0;
+  quotes: none;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+  content: "";
+}
+
+/* Small text */
+small {
+  font-size: 80%;
+}
+
+/* Remove native list styles on nav when appropriate (keeps markup clean) */
+nav ul, nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Preserve focus outlines for accessibility but prefer focus-visible handling */
+:focus {
+  outline: 2px solid Highlight; /* preserves a visible focus ring in most UAs */
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) {
+  /* Browsers that support :focus-visible will suppress this rule;
+     on older browsers we still keep visible focus via the rule above. */
+  outline: none;
+}
+
+/* Reduced motion preference — minimize motion for users who opt out */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

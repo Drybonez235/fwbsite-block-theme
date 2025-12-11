@@ -1,0 +1,296 @@
+/* footer.css
+   Footer styles rewritten to use only base.css variables.
+   Note: Replaced the SVG data-URI background with a variable-driven gradient
+   so skins can override colors easily.
+*/
+
+/* Footer root */
+.site-footer {
+  position: relative;
+  text-align: center;
+  padding-block: var(--space-6);
+  padding-inline: var(--gutter);
+
+  /* Variable-driven background (skin-able) */
+  color: var(--color-on-footer);
+  background: radial-gradient(
+      circle at 50% 70%,
+      var(--gradient-footer-start) 0%,
+      var(--gradient-footer-end) 70%
+    );
+  background-color: var(--color-footer-bg);
+}
+.site-footer::before {
+  background: var(--color-footer-overlay);
+}
+
+/* Optional overlay for depth (kept variable-based) */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-primary-strong)
+  );
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.site-footer .footer-container {
+  position: relative;
+  z-index: 1; /* keep content above overlay */
+}
+
+/* Layout */
+.footer-container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: calc(var(--space-6) + var(--space-3)); /* ~4rem */
+}
+
+/* Branding */
+.footer-branding {
+  flex-shrink: 0;
+}
+
+.footer-branding a {
+   color: var(--color-on-primary); /* Use a slightly muted color for general info */
+}
+
+.footer-branding .custom-logo-link {
+  display: block;
+  
+}
+.footer-branding .custom-logo {
+  max-block-size: calc(var(--space-6) + var(--space-6)); /* ~96px */
+  inline-size: auto;
+  /* Keep inversion for dark footer; remove if not desired */
+  filter: brightness(0) invert(1);
+ 
+}
+.footer-church-name {
+  display: none;
+  
+}
+
+/* Service Information */
+.footer-service-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2); /* Consistent spacing with footer-info */
+  text-align: center; /* Center text by default */
+}
+
+.footer-service-info p {
+  margin: 0;
+  font-size: var(--fs-md); /* Consistent font size */
+  line-height: var(--leading);
+  color: var(--color-on-primary); /* Use a slightly muted color for general info */
+  text-align: left;
+}
+
+.footer-service-info p strong {
+  color: var(--color-on-footer); /* Highlight the service type */
+}
+
+/* Tablet adjustments for service info */
+@media (max-width: 880px) {
+  .footer-service-info {
+    order: 2; /* Position it between branding and info/social */
+    text-align: center; /* Ensure it stays centered */
+    margin-block-end: var(--space-2); /* Consistent margin */
+  }
+}
+
+/* Mobile adjustments for service info */
+@media (max-width: 640px) {
+  .footer-service-info h3 {
+    font-size: var(--fs-md); /* Adjust heading size for mobile */
+  }
+  .footer-service-info p {
+    font-size: var(--fs-sm); /* Adjust paragraph size for mobile */
+  }
+}
+
+/* Print adjustments for service info */
+@media print {
+  .footer-service-info {
+    order: unset; /* Remove specific order for print if needed, or adjust */
+    text-align: left; /* Align left in print if other elements are changing */
+    color: var(--color-text); /* Use standard text color for print */
+  }
+}
+
+/* Right-side info */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-align: right;
+  margin-block-end: var(--space-3);
+}
+.footer-info p {
+  margin: 0;
+  font-size: var(--fs-md);
+  line-height: var(--leading);
+}
+.footer-address {
+  color: var(--color-on-primary);
+}
+.footer-phone,
+.footer-email {
+  font-size: var(--fs-md);
+}
+
+/* Contact links */
+.footer-phone a,
+.footer-email a {
+  color: var(--color-on-primary);
+  text-decoration: none;
+  transition:
+    color var(--ease-fast),
+    background-color var(--ease-fast),
+    box-shadow var(--ease);
+  padding-block: var(--space-0);
+  padding-inline: var(--space-1);
+  border-radius: var(--radius-sm);
+}
+.footer-phone a:hover,
+.footer-email a:hover {
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+}
+
+/* Social */
+.footer-social {
+  display: flex;
+  justify-content: flex-end;
+}
+.social-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.social-links li {
+  margin: 0;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--space-6);
+  block-size: var(--space-6);
+  border-radius: var(--radius-md);
+  color: var(--color-on-primary);
+  text-decoration: none;
+  transition:
+    color var(--ease-fast),
+    background-color var(--ease-fast),
+    transform var(--ease-fast),
+    box-shadow var(--ease);
+  background: transparent;
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+.social-links a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  transform: translateY(calc(var(--space-0) / -2)); /* ~-2px */
+  box-shadow: var(--shadow-md);
+}
+.social-links svg {
+  inline-size: var(--fs-xl); /* ~22px */
+  block-size: var(--fs-xl);
+  fill: currentColor;
+}
+
+/* Tablet */
+@media (max-width: 880px) {
+  .site-footer {
+    padding-block: var(--space-5);
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+    text-align: center;
+  }
+  .footer-branding {
+    order: 1;
+  }
+  .footer-info {
+    order: 2;
+    text-align: center;
+    margin-block-end: var(--space-2);
+  }
+  .footer-social {
+    order: 3;
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .site-footer {
+    padding-block: var(--space-4);
+  }
+  .footer-container {
+    gap: var(--space-4);
+  }
+  .footer-branding .custom-logo {
+    max-block-size: calc(var(--space-6) + var(--space-5)); /* ~80px */
+  }
+  .footer-info {
+    gap: var(--space-1);
+  }
+  .footer-info p {
+    font-size: var(--fs-sm);
+  }
+  .social-links {
+    gap: var(--space-2);
+  }
+  .social-links a {
+    inline-size: calc(var(--space-6) - var(--space-0)); /* ~44px */
+    block-size: calc(var(--space-6) - var(--space-0));
+  }
+  .social-links svg {
+    inline-size: var(--fs-lg); /* ~18px */
+    block-size: var(--fs-lg);
+  }
+}
+
+/* Accessibility */
+.social-links a:focus,
+.footer-phone a:focus,
+.footer-email a:focus {
+  outline: calc(var(--space-0) / 2) solid var(--color-primary);
+  outline-offset: calc(var(--space-0) / 2);
+}
+
+/* Print */
+@media print {
+  .site-footer {
+    background: none;
+    color: var(--color-text);
+    border-top: calc(var(--space-0) / 2) solid var(--color-muted);
+    page-break-inside: avoid;
+  }
+  .footer-social {
+    display: none;
+  }
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer-info {
+    text-align: right;
+  }
+}
