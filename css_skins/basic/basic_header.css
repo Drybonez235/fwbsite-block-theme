@@ -1,23 +1,43 @@
-/* header.css
-   Responsive header using only base.css variables (no hard-coded design values).
-   Mobile-first, fluid wrap without media queries.
+/* ==================================================== */
+/* Header Navigation - Rewritten with Church Variables */
+/* ==================================================== */
+
+/* --- Variable Mapping Assumptions: ---
+ * --color-surface     -> --color-background-light (White/Off-White)
+ * --color-text        -> --color-text-dark (Near Black)
+ * --shadow-sm         -> --box-shadow-base
+ * --space-2           -> --space-sm (1rem/16px)
+ * --space-3           -> --space-md (1.5rem/24px)
+ * --fs-xl             -> --font-size-h2 (1.777rem)
+ * --space-6           -> --space-xl (4rem/64px)
+ * --radius-sm         -> --border-radius-base (0.25rem)
+ * --color-primary-strong -> --color-primary (Deep Maroon/Dark Brown)
+ * --ease-fast         -> --transition-speed (0.2s)
+ * --radius-md         -> calc(var(--border-radius-base) * 2) (0.5rem)
+ * --color-muted       -> --gray-600 (Medium Dark Gray)
+ * --container-max     -> 1400px (Assumed)
+ * --gutter            -> --space-md (1.5rem/24px)
+ * --leading (line-height) -> 1.2
+ * --space-0           -> 3px (Assumed for outline border size)
 */
 
 header {
-  background: var(--color-surface);
-  color: var(--color-text);
-  box-shadow: var(--shadow-sm);
+  /* Background, text color, and shadow */
+  background: var(--color-background-light);
+  color: var(--color-text-dark);
+  box-shadow: var(--box-shadow-base); /* Mapped from --shadow-sm */
 }
 
+/* Header Container Layout */
 header {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-md); /* Mapped from --space-3 */
   flex-wrap: wrap;
-  max-width: var(--container-max);
+  max-width: 1400px; /* Assumed --container-max */
   margin-inline: auto;
-  padding-block: var(--space-2);
-  padding-inline: var(--gutter);
+  padding-block: var(--space-sm); /* Mapped from --space-2 */
+  padding-inline: var(--space-md); /* Mapped from --gutter */
 }
 
 /* Logo */
@@ -27,17 +47,18 @@ header {
   min-inline-size: 0;
 }
 .site-logo a {
-  color: var(--color-text);
+  color: var(--color-text-dark);
   text-decoration: none;
 }
 .site-logo h1 {
-  font-size: var(--fs-xl);
-  line-height: var(--leading);
+  /* Use a standard header size for the logo title */
+  font-size: var(--font-size-h2); /* Mapped from --fs-xl */
+  line-height: 1.2; /* Assumed --leading */
   margin: 0;
 }
 .site-logo img {
   display: block;
-  max-block-size: var(--space-6);
+  max-block-size: var(--space-xl); /* Mapped from --space-6 */
   height: auto;
   width: auto;
 }
@@ -48,13 +69,13 @@ nav.primary-menu {
   min-inline-size: 0;
 }
 
-/* WordPress typically outputs: nav.primary-menu > ul.primary-menu */
+/* WordPress outputs: nav.primary-menu > ul.primary-menu */
 nav.primary-menu > ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-sm); /* Mapped from --space-2 */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -64,20 +85,22 @@ nav.primary-menu > ul {
 nav.primary-menu a {
   display: inline-flex;
   align-items: center;
-  padding-block: var(--space-1);
-  padding-inline: var(--space-1);
-  color: var(--color-text);
+  padding-block: var(--space-xs); /* Mapped from --space-1 (Assumed) */
+  padding-inline: var(--space-xs); /* Mapped from --space-1 (Assumed) */
+  color: var(--color-text-dark);
   text-decoration: none;
-  border-radius: var(--radius-sm);
-  transition: color var(--ease-fast), background-color var(--ease-fast),
-    box-shadow var(--ease-fast);
+  border-radius: var(--border-radius-base); /* Mapped from --radius-sm */
+  transition: color var(--transition-speed), background-color var(--transition-speed),
+    box-shadow var(--transition-speed); /* Mapped from --ease-fast */
 }
 nav.primary-menu a:hover {
-  color: var(--color-primary-strong);
+  /* Use the brand color on hover */
+  color: var(--color-primary); /* Mapped from --color-primary-strong */
 }
 nav.primary-menu a:focus-visible {
-  outline: var(--space-0) solid var(--color-primary);
-  outline-offset: var(--space-0);
+  /* High-contrast focus indicator */
+  outline: 3px solid var(--color-secondary); /* Assumed 3px for --space-0, used secondary color for focus */
+  outline-offset: 3px; /* Assumed 3px for --space-0 */
 }
 
 /* Active/current states from WP classes */
@@ -85,7 +108,8 @@ nav.primary-menu li.current-menu-item > a,
 nav.primary-menu li.current_page_item > a,
 nav.primary-menu li.current-menu-ancestor > a {
   color: var(--color-primary);
-  box-shadow: inset 0 calc(var(--space-0) * -1) 0 0 var(--color-primary);
+  /* Highlight the active link with a subtle bottom shadow/border */
+  box-shadow: inset 0 -3px 0 0 var(--color-primary); /* Assumed 3px for --space-0 */
 }
 
 /* Dropdowns (basic hover-only behavior; no JS) */
@@ -93,17 +117,17 @@ nav.primary-menu li {
   position: relative;
 }
 nav.primary-menu li.menu-item-has-children > a {
-  padding-inline-end: var(--space-2);
+  padding-inline-end: var(--space-sm); /* Mapped from --space-2 */
 }
 nav.primary-menu ul.sub-menu {
   display: none;
   position: absolute;
   inset-block-start: 100%;
   inset-inline-start: 0;
-  background: var(--color-surface);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-1);
+  background: var(--color-background-light); /* Mapped from --color-surface */
+  border-radius: calc(var(--border-radius-base) * 2); /* Mapped from --radius-md (0.5rem) */
+  box-shadow: var(--box-shadow-base); /* Mapped from --shadow-md (using --box-shadow-base for consistency) */
+  padding: var(--space-xs); /* Mapped from --space-1 (Assumed) */
   margin: 0;
   list-style: none;
   min-inline-size: 100%;
@@ -113,13 +137,13 @@ nav.primary-menu li:hover > ul.sub-menu {
 }
 nav.primary-menu ul.sub-menu > li > a {
   display: block;
-  padding-block: var(--space-1);
-  padding-inline: var(--space-2);
-  border-radius: var(--radius-sm);
+  padding-block: var(--space-xs); /* Mapped from --space-1 (Assumed) */
+  padding-inline: var(--space-sm); /* Mapped from --space-2 */
+  border-radius: var(--border-radius-base); /* Mapped from --radius-sm */
   white-space: nowrap;
 }
 
 /* Optional muted utility in header context */
 header .muted {
-  color: var(--color-muted);
+  color: var(--gray-600); /* Mapped from --color-muted */
 }
