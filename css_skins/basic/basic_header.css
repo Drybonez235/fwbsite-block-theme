@@ -25,7 +25,7 @@ header {
   /* Background, text color, and shadow */
   background: var(--color-background-light);
   color: var(--color-text-dark);
-  box-shadow: var(--box-shadow-base); /* Mapped from --shadow-sm */
+  box-shadow: none;
 }
 
 /* Header Container Layout */
@@ -114,7 +114,7 @@ nav.primary-menu li.current-menu-ancestor > a {
   border-bottom-right-radius: 0;
   
   /* 2. Use a clean bottom border */
-  border-bottom: 3px solid var(--color-primary); 
+  border-bottom: 2px solid var(--color-primary); 
   
   /* 3. Adjust vertical padding to maintain element height */
   /* Assuming var(--space-xs) is 0.5rem (8px), this becomes calc(8px - 3px) */
