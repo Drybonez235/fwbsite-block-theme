@@ -23,17 +23,6 @@ function fwbsite_enqueue_styles() {
     // 3) Locate the main skin file (prefer {skin}.css else first .css)
     $skin_css_file = $skin_dir_path . $skin . '.css';
 
-    // Register & enqueue skin file (so variables are present)
-    $skin_handle = 'fwbsite-skin-' . sanitize_key($skin);
-    $has_skin_file = false;
-    if ($skin_css_file) {
-        $skin_css_uri = $skin_dir_uri . basename($skin_css_file);
-        $skin_ver = filemtime($skin_css_file);
-        wp_register_style($skin_handle, $skin_css_uri, ['church-base-style'], $skin_ver);
-        wp_enqueue_style($skin_handle);
-        $has_skin_file = true;
-    }
-
     // 4) Load all CSS from /css_skins/basic/ and make them depend on the skin (or base if no skin)
     $basic_dir_path = trailingslashit($theme_path . '/css_skins/basic');
     $basic_dir_uri  = trailingslashit($theme_uri  . '/css_skins/basic');
@@ -109,11 +98,7 @@ function church_register_style_customizer( $wp_customize ) {
             'settings'=> $setting_id,
             'type'    => 'select',
             'choices' => array(
-                'classic' => __( 'Classic', 'your-theme' ),
-                'country'  => __( 'Country', 'your-theme' ),
-                'modern'  => __( 'Modern', 'your-theme' ),
-                'city'    => __( 'City', 'your-theme' ),
-                'sunrise' => __( 'Sunrise', 'your-theme' ),
+                'classic' => __( 'Classic', 'your-theme' )
             ),
         )
     );

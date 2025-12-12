@@ -2,7 +2,7 @@
   <div class="hero-image-container" style="background-image: url('<?php echo esc_url( get_theme_mod('church_image') ); ?>')";>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="church-name">Grace & Truth Community Church</h1>
+     <?php echo esc_html( get_theme_mod('church_name', 'Our Church') ); ?>
       <p class="church-tagline">Serving Our Community Since 1950</p>
     </div>
   </div>
