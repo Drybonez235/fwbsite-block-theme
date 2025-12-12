@@ -98,7 +98,7 @@ function church_register_style_customizer( $wp_customize ) {
             'settings'=> $setting_id,
             'type'    => 'select',
             'choices' => array(
-                'classic' => __( 'Classic', 'your-theme' )
+                'basic' => __( 'Basic', 'your-theme' )
             ),
         )
     );
