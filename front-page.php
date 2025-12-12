@@ -39,7 +39,7 @@
       </div>
     
     <div class="main-service-image">
-      <img src="hero.jpg" alt="Photo of the congregation or church interior.">
+      <img src="<?php echo esc_html( get_theme_mod('welcome_image', 'Welcome') ); ?>" alt="Welcome photo">
     </div>
   </div>
 
