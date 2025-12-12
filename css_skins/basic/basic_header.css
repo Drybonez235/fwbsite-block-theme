@@ -108,8 +108,17 @@ nav.primary-menu li.current-menu-item > a,
 nav.primary-menu li.current_page_item > a,
 nav.primary-menu li.current-menu-ancestor > a {
   color: var(--color-primary);
-  /* Highlight the active link with a subtle bottom shadow/border */
-  box-shadow: inset 0 -3px 0 0 var(--color-primary); /* Assumed 3px for --space-0 */
+  
+  /* 1. Force a straight line by setting bottom corners to 0 radius */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  
+  /* 2. Use a clean bottom border */
+  border-bottom: 3px solid var(--color-primary); 
+  
+  /* 3. Adjust vertical padding to maintain element height */
+  /* Assuming var(--space-xs) is 0.5rem (8px), this becomes calc(8px - 3px) */
+  padding-block: calc(var(--space-xs) - 3px) var(--space-xs);
 }
 
 /* Dropdowns (basic hover-only behavior; no JS) */
