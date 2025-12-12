@@ -30,8 +30,8 @@ function fwbsite_enqueue_basic_styles() {
         
         // Ensure the main theme stylesheet is registered/enqueued first (optional, based on your theme structure).
         // If your main style.css isn't loaded elsewhere, uncomment the lines below:
-        // wp_register_style('church-base-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
-        // wp_enqueue_style('church-base-style');
+        wp_register_style('church-base-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
+        wp_enqueue_style('church-base-style');
 
 
         // Loop through and enqueue each file.
