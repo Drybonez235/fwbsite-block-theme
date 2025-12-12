@@ -27,6 +27,63 @@
     </div>
   </div>
 </section>
+<section class="service-times-section">
+
+  <h2 class="section-title">Worship at Northwest</h2>
+  
+  <div class="main-service-layout">
+    
+    <div class="main-service-info">
+      <h3 class="service-heading">Sunday Worship</h3>
+      <p>Our woman love engaging with the community and serve each day. They enjoy getting together for coffee, cleaning the church, and have an annual tea. Our woman love engaging with the community and serve each day. They enjoy getting together for coffee, cleaning the church, and have an annual tea.</p>
+      </div>
+    
+    <div class="main-service-image">
+      <img src="hero.jpg" alt="Photo of the congregation or church interior.">
+    </div>
+  </div>
+
+  <h2 class="section-title other-services-header">Other services</h2>
+
+  <div class="other-services-container">
+    
+    <div class="service-card">
+      <div class="card-header">
+        <h4 class="card-heading">Sunday Night</h4>
+      </div>
+      <p class="card-description">Our woman love engaging with the community and serve each day. They enjoy getting together for coffee, cleaning the church, and have an annual tea.</p>
+      <div class="time-footer">
+        <span class="time-large">7:00</span>
+        <span class="time-small">Pm</span>
+      </div>
+    </div>
+    
+    
+    
+    <div class="service-card">
+      <div class="card-header">
+        <h4 class="card-heading">Sunday school</h4>
+      </div>
+      <p class="card-description">Our woman love engaging with the community and serve each day. They enjoy getting together for coffee, cleaning the church, and have an annual tea.</p>
+      <div class="time-footer">
+        <span class="time-large">10:00</span>
+        <span class="time-small">Am</span>
+      </div>
+    </div>
+    
+    <div class="service-card">
+      <div class="card-header">
+        <h4 class="card-heading">Sunday Worship</h4>
+      </div>
+      <p class="card-description">Our woman love engaging with the community and serve each day. They enjoy getting together for coffee, cleaning the church, and have an annual tea.</p>
+      <div class="time-footer">
+        <span class="time-large">11:00</span>
+        <span class="time-small">Am</span>
+      </div>
+    </div>
+    
+  </div>
+</section>
 </main>
 
 <?php get_footer(); ?>
