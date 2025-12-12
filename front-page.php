@@ -2,7 +2,7 @@
 
 <main id="main-content">
   <!-- Hero Section -->
- <header class="hero-section">
+ <section class="hero-section">
   <div class="hero-image-container" style="background-image: url('<?php echo esc_url( get_theme_mod('church_image') ); ?>')";>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -26,7 +26,7 @@
     
     </div>
   </div>
-</header>
+</section>
 </main>
 
 <?php get_footer(); ?>
