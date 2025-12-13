@@ -187,7 +187,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: var(--space-lg);
+    padding: var(--space-xl) var(--space-lg);
     text-align: center;
 }
 
@@ -243,12 +243,11 @@
     
     /* 1. Reduce the overall height on smaller screens */
     .main-service-hero {
-        /* Reduce from 60vh to 50vh or even 45vh if needed, 
-           or use min-height for better control */
-        height: auto; /* Allow content to dictate height */
+        height: auto;
+        /* Using padding here ensures space is added around the content */
         padding-top: var(--space-xl); 
         padding-bottom: var(--space-xl);
-        min-height: 350px; /* Ensure it still feels like a hero */
+        min-height: 350px; 
     }
 
     /* 2. Scale down the largest font sizes in the hero section */
@@ -277,6 +276,6 @@
     
     /* 4. Ensure the content wrapper can breathe */
     .hero-overlay {
-        padding: var(--space-md); /* Reduce padding on small screens */
+        padding: 0;
     }
 }
