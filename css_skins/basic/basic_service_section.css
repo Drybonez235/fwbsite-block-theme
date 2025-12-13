@@ -72,9 +72,10 @@
   grid-template-columns: 1fr;
   gap: var(--space-lg);
   margin-top: var(--space-md);
-  margin-left: var(--space-lg);
+  /* margin-left: var(--space-lg);
   margin-right: var(--space-lg);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-md); */
+  padding: var(--space-md);
   justify-content: center;
 }
 
