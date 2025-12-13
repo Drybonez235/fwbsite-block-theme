@@ -162,42 +162,36 @@ header .muted {
 /* Wrapper for Logo/Site Title and Church Name to control alignment */
 .logo-info-wrapper {
     display: flex;
-    flex-direction: column; /* Stack logo and church name vertically by default */
-    justify-content: center;
-    align-items: flex-start;
+    /* CHANGE: Force horizontal alignment (inline) */
+    flex-direction: row; 
+    
+    /* Align items to the bottom baseline for a clean look */
+    align-items: flex-end; 
+    
+    /* Add horizontal gap between the logo/site title and the church name */
+    gap: var(--space-sm); 
+    
+    justify-content: flex-start;
     min-inline-size: 0;
+}
+
+/* Logo h1 - Ensure the site title text is styled as desired for inline view */
+.site-logo h1 {
+    /* Keeping the desktop size from the previous response for prominence */
+    font-size: var(--font-size-h2); 
+    line-height: 1.2;
+    margin: 0;
 }
 
 /* Church Name Styling */
 .church-name {
-    /* Use a smaller, subtle style for the church name */
-    font-family: var(--font-body); /* Using the body font for a distinction from the main h1 */
+    /* Use a standard font size, but slightly less dominant than the main site title */
+    font-family: var(--font-body);
     font-size: var(--font-size-large); 
     font-weight: var(--font-weight-regular);
-    color: var(--gray-700); /* A slightly muted color */
+    color: var(--gray-700);
     line-height: 1.2;
-    margin-block-start: var(--space-xxs); /* Small gap above the church name */
-    margin-block-end: 0;
-    margin-inline: 0;
-}
-
-/* --- Optional: Desktop Layout Change --- */
-/* On wider screens, place the church name next to the site logo for a cleaner look */
-@media (min-width: var(--breakpoint-md)) {
-    .logo-info-wrapper {
-        flex-direction: row; /* Layout logo and church name horizontally */
-        gap: var(--space-sm); /* Gap between the logo and the church name */
-        align-items: flex-end; /* Align the bottom of the logo and the church name text */
-    }
-
-    .church-name {
-        /* On desktop, make the church name slightly more prominent */
-        font-size: var(--font-size-large);
-        margin-block-start: 0; /* Remove top margin when aligned horizontally */
-    }
-
-    .site-logo h1 {
-        /* Revert to the larger size on desktop if desired, or keep the smaller size */
-        font-size: var(--font-size-h2); 
-    }
+    
+    /* REMOVED: All vertical margins to maintain inline alignment */
+    margin: 0; 
 }
