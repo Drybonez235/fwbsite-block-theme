@@ -166,7 +166,7 @@ header .muted {
     flex-direction: row; 
     
     /* Align items to the bottom baseline for a clean look */
-    align-items: flex-end; 
+    align-items: baseline;
     
     /* Add horizontal gap between the logo/site title and the church name */
     gap: var(--space-sm); 
@@ -181,7 +181,6 @@ header .muted {
     font-size: var(--font-size-h2); 
     line-height: 1.2;
     margin: 0;
-    align-items: center;
 }
 
 /* Church Name Styling */
@@ -190,7 +189,7 @@ header .muted {
     font-family: var(--font-body);
     font-size: var(--font-size-large); 
     font-weight: var(--font-weight-regular);
-    color: var(--gray-700);
+    color: var(--gray-800);
     line-height: 1.2;
     
     /* REMOVED: All vertical margins to maintain inline alignment */
