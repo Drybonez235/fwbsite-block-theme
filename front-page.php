@@ -14,7 +14,7 @@
   <div class="info-bar">
     <div class="info-group address-contact">
       <p class="service-time">
-        Sunday School: 9:00 AM
+        Sunday School: <span><?php echo esc_html( get_theme_mod('sunday_school_time', '9:30 AM') ); ?></span>
       </p>
 	<p class="service-time">
         Worship Service: 10:30 AM
@@ -22,7 +22,7 @@
     </div>
     <div class="info-group address-contact">
       <p class="contact-number">(555) 123-4567</p>
-      <p class="address">123 Faith Ave, Anytown, CA 90210</p>
+      <p class="address"> <?php echo get_theme_mod('church_location', '123 Main Street, Hometown'); ?></p>
     
     </div>
   </div>
@@ -35,52 +35,45 @@
     
     <div class="main-service-info">
       <h3 class="service-heading">Sunday Worship</h3>
-      <p>Our woman love engaging with the community and serve each day. They enjoy getting together for coffee, cleaning the church, and have an annual tea. Our woman love engaging with the community and serve each day. They enjoy getting together for coffee, cleaning the church, and have an annual tea.</p>
+      <p><?php echo get_theme_mod('sunday_service_description', ''); ?></p>
       </div>
     
     <div class="main-service-image">
-      <img src="<?php echo esc_html( get_theme_mod('welcome_image', 'Welcome') ); ?>" alt="Welcome photo">
+      <?php if ( get_theme_mod('welcome_image') ) : ?>
+        <img
+          class="welcome-img"
+          src="<?php echo esc_url( get_theme_mod('welcome_image') ); ?>"
+          alt="<?php echo esc_attr( get_theme_mod('church_name', get_bloginfo('name')) ); ?>"
+        />
+      <?php endif; ?>
     </div>
   </div>
 
   <h2 class="section-title other-services-header">Other services</h2>
 
   <div class="other-services-container">
-    
-    <div class="service-card">
-      <div class="card-header">
-        <h4 class="card-heading">Sunday Night</h4>
-      </div>
-      <p class="card-description">Our woman love engaging with the community and serve each day. They enjoy getting together for coffee, cleaning the church, and have an annual tea.</p>
-      <div class="time-footer">
-        <span class="time-large">7:00</span>
-        <span class="time-small">Pm</span>
-      </div>
-    </div>
-    
-    
-    
-    <div class="service-card">
+   
+  <div class="service-card">
       <div class="card-header">
         <h4 class="card-heading">Sunday school</h4>
       </div>
-      <p class="card-description">Our woman love engaging with the community and serve each day. They enjoy getting together for coffee, cleaning the church, and have an annual tea.</p>
+      <p class="card-description"><?php echo get_theme_mod('sunday_school_description', ''); ?></p>
       <div class="time-footer">
-        <span class="time-large">10:00</span>
-        <span class="time-small">Am</span>
+        <span class="time-large"><?php echo esc_html( get_theme_mod('sunday_school_time', '9:30 AM') ); ?></span>
       </div>
     </div>
-    
-    <div class="service-card">
+
+    <?php if ( get_theme_mod('enable_sunday_night', false) ) : ?>
+      <div class="service-card">
       <div class="card-header">
-        <h4 class="card-heading">Sunday Worship</h4>
+        <h4 class="card-heading">Sunday Night</h4>
       </div>
-      <p class="card-description">Our woman love engaging with the community and serve each day. They enjoy getting together for coffee, cleaning the church, and have an annual tea.</p>
+      <p class="card-description"><?php echo get_theme_mod('sunday_night_description', ''); ?></p>
       <div class="time-footer">
-        <span class="time-large">11:00</span>
-        <span class="time-small">Am</span>
+        <span class="time-large"><?php echo get_theme_mod('sunday_night_time', '6:00 PM'); ?></span>
       </div>
-    </div>
+    </div> 
+      <?php endif; ?>
     
   </div>
 </section>
