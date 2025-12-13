@@ -48,8 +48,6 @@
         <?php endif; ?>
     </div>
 
-  <h2 class="section-title other-services-header">Service Information</h2>
-
   <div class="other-services-container">
    
   <div class="service-card">
