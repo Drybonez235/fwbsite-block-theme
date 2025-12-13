@@ -4,7 +4,7 @@
 
 .service-times-section {
     background: var(--gray-800);
-    margin-top: var(--space-lg); /* Remove top/bottom padding to let hero go full-width */
+    margin-top: var(--space-xl); /* Remove top/bottom padding to let hero go full-width */
     padding-bottom: var(--space-lg);
     max-width: none; /* Allow it to be full-width */
     box-shadow: none; /* Remove section shadow */
@@ -101,8 +101,8 @@
   flex-direction: column;
   justify-content: space-between;
   transition: transform var(--transition-speed),
-              box-shadow var(--transition-speed);
-}
+  box-shadow var(--transition-speed);
+}a
 
 .service-card:hover {
   transform: translateY(-4px);
@@ -233,4 +233,50 @@
     color: var(--color-text-light);
     margin-bottom: var(--space-lg);
     line-height: 1.6;
+}
+
+/* =============================
+    Responsive Adjustments for Small Screens (Under 768px)
+    ============================= */
+
+@media (max-width: 767px) {
+    
+    /* 1. Reduce the overall height on smaller screens */
+    .main-service-hero {
+        /* Reduce from 60vh to 50vh or even 45vh if needed, 
+           or use min-height for better control */
+        height: auto; /* Allow content to dictate height */
+        padding-top: var(--space-xl); 
+        padding-bottom: var(--space-xl);
+        min-height: 350px; /* Ensure it still feels like a hero */
+    }
+
+    /* 2. Scale down the largest font sizes in the hero section */
+    .hero-service-heading {
+        /* Reduce from h1 (2.369rem) to h2 or slightly smaller */
+        font-size: var(--font-size-h2); /* ~28px */
+        /* You might want to remove the bold weight to save space if necessary, 
+           but let's keep it bold for now */
+    }
+
+    .hero-time-large {
+        /* Reduce from 2.8rem to something closer to h1 size */
+        font-size: var(--font-size-h1); /* ~38px */
+        margin-bottom: var(--space-sm); /* Tighten up spacing */
+    }
+    
+    .hero-title {
+        /* Reduce from h2 (1.777rem) to h3 size */
+        font-size: var(--font-size-h3);
+    }
+    
+    /* 3. Reduce description size slightly */
+    .hero-description {
+        font-size: var(--font-size-base);
+    }
+    
+    /* 4. Ensure the content wrapper can breathe */
+    .hero-overlay {
+        padding: var(--space-md); /* Reduce padding on small screens */
+    }
 }
