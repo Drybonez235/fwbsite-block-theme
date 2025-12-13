@@ -181,6 +181,7 @@ header .muted {
     font-size: var(--font-size-h2); 
     line-height: 1.2;
     margin: 0;
+    align-items: center;
 }
 
 /* Church Name Styling */
