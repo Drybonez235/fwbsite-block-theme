@@ -77,14 +77,12 @@
    Other Services Cards
    ============================= */
 
-/* Center the other services container */
 .other-services-container {
-    /* Existing styles... */
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: var(--space-lg);
-    padding-right: var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -122,12 +120,11 @@
   margin-bottom: var(--space-sm);
 }
 
-/* Other Services Cards - Refinement */
 .card-heading {
-    /* Increased size slightly for better emphasis in the card header */
-    font-size: var(--font-size-large); 
-    color: var(--color-primary);
-    margin-bottom: var(--space-xs);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
 }
 
 /* Card Body */
@@ -147,17 +144,16 @@
 }
 
 .time-large {
-    /* Increased size and used primary color for high impact */
-    font-size: var(--font-size-h2); 
-    font-weight: 900; /* Extra bold */
-    color: var(--color-primary); /* Primary color for time */
-    line-height: 1;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
 }
 
 .time-small {
   font-size: var(--font-size-large);
   color: var(--gray-700);
 }
+
 
 /* =============================
     Main Service HERO Layout

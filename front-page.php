@@ -41,7 +41,6 @@
                 <p class="hero-description">
                     <?php echo get_theme_mod('sunday_service_description', 'A time of vibrant worship, engaging teaching, and communion. Children’s Church and Nursery are available.'); ?>
                 </p>
-                <a href="#" class="hero-cta-button">Plan Your Visit</a>
             </div>
         </div>
         <?php if ( get_theme_mod('welcome_image') ) : ?>
