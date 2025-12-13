@@ -32,14 +32,14 @@
 
  <div class="main-service-hero">
         <div class="hero-overlay">
-            <h2 class="hero-title">Worship at <span><?php echo esc_html( get_theme_mod('church_name', 'Northwest Church')); ?></span></h2>
+            <h2 class="hero-title">Worship at <span><?php echo esc_html( get_theme_mod('church_name', 'Church Name')); ?></span></h2>
             
             <div class="hero-content">
                 <h3 class="hero-service-heading">Sunday Worship</h3>
                 <span class="hero-time-large"><?php echo esc_html( get_theme_mod('sunday_service_time', '11:00 AM') ); ?></span>
                 
                 <p class="hero-description">
-                    <?php echo get_theme_mod('sunday_service_description', 'A time of vibrant worship, engaging teaching, and communion. Children’s Church and Nursery are available.'); ?>
+                    <?php echo get_theme_mod('welcome_message', 'A time of vibrant worship, engaging teaching, and communion. Children’s Church and Nursery are available.'); ?>
                 </p>
             </div>
         </div>
