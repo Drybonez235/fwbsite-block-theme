@@ -166,7 +166,7 @@ header .muted {
     flex-direction: row; 
     
     /* Align items to the bottom baseline for a clean look */
-    align-items: baseline;
+    align-items: center;
     
     /* Add horizontal gap between the logo/site title and the church name */
     gap: var(--space-sm); 
