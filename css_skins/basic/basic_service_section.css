@@ -4,7 +4,8 @@
 
 .service-times-section {
     background: var(--gray-800);
-    padding: 0; /* Remove top/bottom padding to let hero go full-width */
+    padding-top: var(--space-lg); /* Remove top/bottom padding to let hero go full-width */
+    padding-bottom: var(--space-lg);
     max-width: none; /* Allow it to be full-width */
     margin: 0; /* Remove auto margin */
     box-shadow: none; /* Remove section shadow */
