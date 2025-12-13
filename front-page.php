@@ -96,6 +96,27 @@
     
   </div>
 </section>
+
+<!-- Pastor Section -->
+  <section class="pastor">
+    <h2>Meet Our Pastor</h2>
+    <div class="pastor-info">
+      <?php if ( get_theme_mod('pastor_image') ) : ?>
+      <img
+        src="<?php echo esc_url( get_theme_mod('pastor_image') ); ?>"
+        alt="<?php echo esc_attr( get_theme_mod('pastor_name', 'Our Pastor') ); ?>"
+      />
+      <?php endif; ?>
+
+      <h3 class="pastor-name">
+        <?php echo esc_html( get_theme_mod('pastor_name', 'Pastor John Doe') ); ?>
+      </h3>
+
+      <p class="pastor-bio">
+        <?php echo esc_html( get_theme_mod('pastor_bio', 'Our pastor is dedicated to serving the congregation.') ); ?>
+      </p>
+    </div>
+  </section>
 </main>
 
 <?php get_footer(); ?>
