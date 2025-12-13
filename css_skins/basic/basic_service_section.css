@@ -3,12 +3,11 @@
    ============================= */
 
 .service-times-section {
-  background: var(--gray-100);              /* Light card background */
-  padding: var(--space-xl) var(--space-lg); /* Spacious inner padding */
-  border-radius: var(--border-radius-base); /* Rounded corners */
-  box-shadow: var(--box-shadow-base);       /* Soft card shadow */
-  max-width: 1200px;                        /* Keep the card nicely sized */
-  margin: var(--space-xl) auto;             /* Center the card on the page */
+    background: var(--color-background-light); /* Set background to white for the grid section */
+    padding: 0; /* Remove top/bottom padding to let hero go full-width */
+    max-width: none; /* Allow it to be full-width */
+    margin: 0; /* Remove auto margin */
+    box-shadow: none; /* Remove section shadow */
 }
 
 /* --- Titles --- */
@@ -21,8 +20,14 @@
   color: var(--color-primary);
 }
 
+/* Add padding back to the secondary services header */
 .other-services-header {
-  margin-top: var(--space-xl);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 /* =============================
@@ -72,12 +77,14 @@
    Other Services Cards
    ============================= */
 
+/* Center the other services container */
 .other-services-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-lg);
-  margin-top: var(--space-md);
-  justify-content: center;
+    /* Existing styles... */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
 }
 
 @media (min-width: 768px) {
@@ -115,11 +122,12 @@
   margin-bottom: var(--space-sm);
 }
 
+/* Other Services Cards - Refinement */
 .card-heading {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-h4);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+    /* Increased size slightly for better emphasis in the card header */
+    font-size: var(--font-size-large); 
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
 }
 
 /* Card Body */
@@ -139,12 +147,116 @@
 }
 
 .time-large {
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-secondary);
+    /* Increased size and used primary color for high impact */
+    font-size: var(--font-size-h2); 
+    font-weight: 900; /* Extra bold */
+    color: var(--color-primary); /* Primary color for time */
+    line-height: 1;
 }
 
 .time-small {
   font-size: var(--font-size-large);
   color: var(--gray-700);
+}
+
+/* =============================
+    Main Service HERO Layout
+    ============================= */
+
+.main-service-hero {
+    position: relative;
+    height: 60vh; /* Use viewport height for a dramatic effect */
+    min-height: 400px;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    overflow: hidden;
+}
+
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1; /* Below the overlay and content */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 40% opaque dark overlay for contrast */
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    text-align: center;
+}
+
+/* --- Hero Content Styling --- */
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-light); /* White */
+    z-index: 3;
+    margin-bottom: var(--space-sm);
+}
+
+.hero-title span {
+    color: var(--color-tertiary); /* Use a light secondary color */
+}
+
+.hero-content {
+    z-index: 3;
+    max-width: 600px;
+}
+
+.hero-service-heading {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h1); /* Make it very large */
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary); /* Use your accent color */
+    margin-bottom: var(--space-xs);
+    line-height: 1.1;
+}
+
+.hero-time-large {
+    font-size: 2.8rem; /* Even bigger than h1 for the time */
+    font-weight: 900;
+    color: var(--color-text-light);
+    display: block;
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.1rem;
+}
+
+.hero-description {
+    font-size: var(--font-size-large);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    line-height: 1.6;
+}
+
+/* --- Hero CTA Button --- */
+.hero-cta-button {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-secondary); /* Contrasting accent color */
+    color: var(--color-primary); /* Dark text on the button */
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    border-radius: var(--border-radius-base);
+    transition: background-color var(--transition-speed);
+}
+
+.hero-cta-button:hover {
+    background-color: #D4AF37; /* A slightly lighter gold/secondary color */
 }

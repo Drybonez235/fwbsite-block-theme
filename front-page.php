@@ -27,29 +27,29 @@
     </div>
   </div>
 </section>
+
 <section class="service-times-section">
 
-  <h2 class="section-title">Worship at <span><?php echo esc_html( get_theme_mod('church_name', 'Our Church')); ?></span></h2>
-  
-  <div class="main-service-layout">
-    
-    <div class="main-service-info">
-      <h3 class="service-heading">Sunday Worship</h3>
-      <p><?php echo get_theme_mod('sunday_service_description', 'Describe your main worship service.'); ?></p>
-      </div>
-    
-    <div class="main-service-image">
-      <?php if ( get_theme_mod('welcome_image') ) : ?>
-        <img
-          class="welcome-img"
-          src="<?php echo esc_url( get_theme_mod('welcome_image') ); ?>"
-          alt="<?php echo esc_attr( get_theme_mod('church_name', get_bloginfo('name')) ); ?>"
-        />
-      <?php endif; ?>
+ <div class="main-service-hero">
+        <div class="hero-overlay">
+            <h2 class="hero-title">Worship at <span><?php echo esc_html( get_theme_mod('church_name', 'Northwest Church')); ?></span></h2>
+            
+            <div class="hero-content">
+                <h3 class="hero-service-heading">Sunday Worship</h3>
+                <span class="hero-time-large"><?php echo esc_html( get_theme_mod('sunday_service_time', '11:00 AM') ); ?></span>
+                
+                <p class="hero-description">
+                    <?php echo get_theme_mod('sunday_service_description', 'A time of vibrant worship, engaging teaching, and communion. Children’s Church and Nursery are available.'); ?>
+                </p>
+                <a href="#" class="hero-cta-button">Plan Your Visit</a>
+            </div>
+        </div>
+        <?php if ( get_theme_mod('welcome_image') ) : ?>
+            <div class="hero-background-image" style="background-image: url('<?php echo esc_url( get_theme_mod('welcome_image') ); ?>');"></div>
+        <?php endif; ?>
     </div>
-  </div>
 
-  <h2 class="section-title other-services-header">Other services</h2>
+  <h2 class="section-title other-services-header">Service Information</h2>
 
   <div class="other-services-container">
    
