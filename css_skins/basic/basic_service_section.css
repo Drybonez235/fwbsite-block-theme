@@ -72,8 +72,9 @@
   grid-template-columns: 1fr;
   gap: var(--space-lg);
   margin-top: var(--space-md);
-  margin-left: var(--space-sm);
-  margin-right: var(--space-sm);
+  margin-left: var(--space-lg);
+  margin-right: var(--space-lg);
+  margin-bottom: var(--space-md);
   justify-content: center;
 }
 
