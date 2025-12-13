@@ -41,7 +41,7 @@
   font-size: var(--font-size-h3);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-sm);
-  color: var(--color-secondary);
+  color: var(--color-text-light);
 }
 
 .main-service-info p {
@@ -201,7 +201,7 @@
 }
 
 .hero-title span {
-    color: var(--color-tertiary); /* Use a light secondary color */
+    color: var(--color-text-light); /* Use a light secondary color */
 }
 
 .hero-content {
@@ -213,7 +213,7 @@
     font-family: var(--font-heading);
     font-size: var(--font-size-h1); /* Make it very large */
     font-weight: var(--font-weight-bold);
-    color: var(--color-secondary); /* Use your accent color */
+    color: var(--color-text-light); /* Use your accent color */
     margin-bottom: var(--space-xs);
     line-height: 1.1;
 }
@@ -232,20 +232,4 @@
     color: var(--color-text-light);
     margin-bottom: var(--space-lg);
     line-height: 1.6;
-}
-
-/* --- Hero CTA Button --- */
-.hero-cta-button {
-    display: inline-block;
-    padding: var(--space-sm) var(--space-md);
-    background-color: var(--color-secondary); /* Contrasting accent color */
-    color: var(--color-primary); /* Dark text on the button */
-    font-weight: var(--font-weight-bold);
-    text-decoration: none;
-    border-radius: var(--border-radius-base);
-    transition: background-color var(--transition-speed);
-}
-
-.hero-cta-button:hover {
-    background-color: #D4AF37; /* A slightly lighter gold/secondary color */
 }
