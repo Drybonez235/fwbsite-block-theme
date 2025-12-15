@@ -32,12 +32,12 @@
 
     <blockquote class="mission-statement__quote-block">
       <p class="mission-statement__quote-text">
-        "To joyfully proclaim the transformative power of the Gospel,
+        <?php echo get_theme_mod('homepage_mission_statement', ' To joyfully proclaim the transformative power of the Gospel,
         cultivate a loving and vibrant community, and serve our neighbors with
-        humility and grace."
+        humility and grace.' );?>
       </p>
       <footer class="mission-statement__source">
-        Our Mission Statement 
+        <?php echo get_theme_mod('mission_subtext', 'Our mission or bible verse reference'); ?>
       </footer>
     </blockquote>
 
