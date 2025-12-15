@@ -27,7 +27,28 @@
     </div>
   </div>
 </section>
+<section class="mission-statement">
+  <div class="mission-statement__content">
 
+    <blockquote class="mission-statement__quote-block">
+      <p class="mission-statement__quote-text">
+        "To joyfully proclaim the transformative power of the Gospel,
+        cultivate a loving and vibrant community, and serve our neighbors with
+        humility and grace."
+      </p>
+      <footer class="mission-statement__source">
+        Our Mission Statement 
+      </footer>
+    </blockquote>
+
+    <div class="mission-statement__cta-container">
+      <a href="/about-us" class="mission-statement__cta">
+        Learn More About our Beliefs
+      </a>
+    </div>
+
+  </div>
+</section>
 <section class="service-times-section">
 
  <div class="main-service-hero">

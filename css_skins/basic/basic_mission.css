@@ -1,0 +1,210 @@
+:root {
+  /* --- Color Palette --- */
+  --color-primary: #4A2C2A;
+  --color-secondary: #B8860B;
+  --color-tertiary: #E0CFA7;
+
+  /* --- Backgrounds & Text --- */
+  --color-background-light: #FFFFFF;
+  --color-background-dark: #F5F5F5;
+  --color-text-dark: #222222;
+  --color-text-light: #FFFFFF;
+
+  /* --- Status Colors --- */
+  --color-success: #38761D;
+  --color-error: #CC0000;
+
+  /* --- Grayscale Spectrum (100-950) --- */
+  --gray-100: #F8F8F8;
+  --gray-200: #EEEEEE;
+  --gray-300: #DDDDDD;
+  --gray-400: #CCCCCC;
+  --gray-500: #AAAAAA;
+  --gray-600: #888888;
+  --gray-700: #666666;
+  --gray-800: #444444;
+  --gray-900: #222222; /* Matches initial --color-text-dark */
+  --gray-950: #0D0D0D;
+}
+
+:root {
+  /* --- Typography --- */
+  --font-heading: Merriweather, serif;
+  --font-body: Roboto, 'Helvetica Neue', sans-serif;
+
+  /* --- Font Sizes (Modular Scale: 1.333 Perfect Fourth) --- */
+  --font-size-base: 1rem;
+  --font-size-large: 1.125rem;
+
+  --font-size-h1: 2.369rem; /* ~38px */
+  --font-size-h2: 1.777rem; /* ~28px */
+  --font-size-h3: 1.333rem; /* ~21px */
+  --font-size-h4: 1rem;     /* 16px */
+
+  /* --- Font Weights --- */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+}
+
+:root {
+  /* --- Spacing Scale (based on 0.5rem or 8px) --- */
+  --space-xxs: 0.25rem; /* 4px */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 4rem;     /* 64px */
+
+  /* --- Component Variables --- */
+  --border-radius-base: 0.25rem;
+  --box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.2s;
+
+  /* --- Breakpoints --- */
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1200px;
+
+}
+/*
+ * Mission Statement Section Styles (Updated with Floating CTA)
+ * Uses variables from 1basic.css.
+ */
+
+.mission-statement {
+  background-color: var(--color-background-light);
+  /* Substantial padding for the visual break and space for the CTA */
+  padding: var(--space-xl) var(--space-xl);
+  width: 100%;
+  box-sizing: border-box;
+  
+  /* CRITICAL: Establish a positioning context for the absolutely positioned CTA */
+  position: relative; 
+}
+
+.mission-statement__content {
+  margin: 0 auto;
+  /* Max width for the quote and footer text */
+  max-width: 900px; 
+  text-align: left; 
+}
+
+/* --- 1. The Blockquote Styling --- */
+
+.mission-statement__quote-block {
+  margin: 0; 
+  padding: 0;
+  border-left: none; 
+}
+
+.mission-statement__quote-text {
+  font-family: var(--font-heading);
+  /* Large, impactful size for the main statement */
+  font-size: var(--font-size-h1); 
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-xxs);
+}
+
+.mission-statement__source {
+  font-family: var(--font-body);
+  /* Smaller size as requested */
+  font-size: var(--font-size-base); 
+  font-weight: var(--font-weight-regular);
+  color: var(--gray-700); 
+  display: block;
+  Margin-top: var(--space-lg);
+}
+
+
+/* --- 2. Floating Call to Action Styling (Desktop) --- */
+
+.mission-statement__cta-container {
+  /* Set the CTA container to float */
+  position: absolute;
+  
+  /* Pin the element to the bottom right of the parent (.mission-statement) */
+  bottom: var(--space-lg); 
+  
+
+  right: calc(50% - 450px + var(--space-md));
+
+  z-index: 10;
+}
+
+.mission-statement__cta {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  border-radius: var(--border-radius-base);
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+  box-shadow: var(--box-shadow-base);
+}
+
+.mission-statement__cta:hover,
+.mission-statement__cta:focus {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+
+/* --- Media Queries for Responsiveness (Mobile) --- */
+@media (max-width: var(--breakpoint-md)) {
+  
+  /* Reset the padding on small screens to prevent overflow */
+  .mission-statement {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  /* Reduce large font size for readability on mobile */
+  .mission-statement__quote-text {
+    font-size: var(--font-size-h2);
+    text-align: center;
+  }
+  
+  .mission-statement__source {
+    text-align: center;
+  }
+
+  /* Reset the CTA to be static and centered */
+  .mission-statement__cta-container {
+    /* CRITICAL: Remove the absolute positioning */
+    position: static; 
+    text-align: center;
+    /* Add margin to separate it from the text above */
+    margin-top: var(--space-lg); 
+  }
+}
+
+/* 2. Tighter Breakpoint for Extremely Small Screens (e.g., 375px wide) */
+@media (max-width: 500px) {
+  
+  /* Reset the padding on small screens to ensure content doesn't hit the edge */
+  .mission-statement {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .mission-statement__quote-text {
+    /* Reduce the font size for a tight fit on very narrow screens. */
+    /* Let's use 1.5rem (24px) - a little smaller than your H2 (1.777rem) */
+    font-size: 1.5rem; 
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  .mission-statement__source {
+    text-align: center;
+  }
+
+  /* Reset the CTA to be static and centered */
+  .mission-statement__cta-container {
+    position: static; 
+    text-align: center;
+    margin-top: var(--space-lg); 
+  }
+}

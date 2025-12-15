@@ -102,7 +102,7 @@
   justify-content: space-between;
   transition: transform var(--transition-speed),
   box-shadow var(--transition-speed);
-}a
+}
 
 .service-card:hover {
   transform: translateY(-4px);
