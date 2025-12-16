@@ -453,7 +453,6 @@ function fwbsite_customize_register($wp_customize) {
     // Platforms to loop through
     $social_platforms = array(
         'facebook'  => 'Facebook',
-        'twitter'   => 'Twitter',
         'instagram' => 'Instagram',
         'youtube'   => 'YouTube',
     );

@@ -5,7 +5,7 @@
 .pastor {
   /* Mapped from color-mix(in oklab, var(--color-surface) 92%, white 8%) 
      using a slight off-white/light gray for subtle background separation. */
-  background: var(--gray-100); 
+  background: var(--color-background-light);
   padding-block: var(--space-xl); /* Add vertical padding to the section */
 }
 
