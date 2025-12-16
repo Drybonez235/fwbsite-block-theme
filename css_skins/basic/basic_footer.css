@@ -30,6 +30,17 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: var(--space-xl);
+
+    /* ADDED: Borders for visual separation */
+    border-top: 1px solid var(--gray-400); 
+    border-bottom: 1px solid var(--gray-400); 
+    
+    /* ADDED: Internal padding to space the content away from the new borders */
+    padding-block: var(--space-md); 
+    
+    /* ADDED: Horizontal padding for smaller screens where layout might break */
+    padding-inline: var(--space-sm); 
+
 }
 
 /* Branding */
