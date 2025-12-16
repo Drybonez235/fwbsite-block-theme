@@ -226,6 +226,9 @@
     .site-footer {
         padding-block: var(--space-sm);
     }
+    .footer-service-info {
+      display: none;
+    }
     .footer-container {
         gap: var(--space-sm);
     }
