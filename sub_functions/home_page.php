@@ -273,11 +273,11 @@ function fwbsite_customize_register($wp_customize) {
 
     // --- Mission Statement (New Field) ---
     $wp_customize->add_setting('homepage_mission_statement', array(
-        'default'           => 'Our mission is to serve and uplift our community.',
+        'default'           => 'To serve Chirst, His church, and His world through Biblical thought and life.',
         'sanitize_callback' => 'sanitize_textarea_field',
     ));
     $wp_customize->add_control('homepage_mission_statement', array(
-        'label'    => __('Mission Statement (Homepage Banner)', 'fwbsite'),
+        'label'    => __('Mission Statement/Bible Verse', 'fwbsite'),
         'section'  => 'church_description_section', // Placing it in your existing section
         'type'     => 'textarea',
         'priority' => 15, // A low priority to place it near the top of the section
@@ -285,7 +285,7 @@ function fwbsite_customize_register($wp_customize) {
 
     // --- Subtext at the Bottom (New Field) ---
     $wp_customize->add_setting('mission_subtext', array(
-        'default'           => 'We look forward to worshipping with you!',
+        'default'           => 'Mission statment or Bible verse reference',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control('mission_subtext', array(
