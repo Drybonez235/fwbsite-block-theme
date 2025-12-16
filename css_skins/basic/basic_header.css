@@ -23,7 +23,7 @@
 
 header {
   /* Background, text color, and shadow */
-  background: var(--color-background-light);
+  background-color: var(--gray-200);
   color: var(--color-text-dark);
   box-shadow: none;
 }
