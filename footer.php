@@ -17,20 +17,20 @@
             <p>Sunday School:
                 <?php echo get_theme_mod('sunday_school_time', '9:30 AM'); ?>
             </p>
-            <p>Sunday Morning Service:
+            <p>Sunday Service:
                 <?php echo get_theme_mod('sunday_service_time', '11:00 AM'); ?>
             </p>
 
             <?php if ( get_theme_mod('enable_sunday_night', false) ) : ?>
                 <p>
-                    Sunday Night Service:
+                    Sunday Night:
                     <?php echo get_theme_mod('sunday_night_time', '6:00 PM'); ?>
                 </p>
             <?php endif; ?>
 
             <?php if ( get_theme_mod('enable_wednesday_night', false) ) : ?>
                 <p>
-                    Wednesday Night Service:
+                    Wednesday Night:
                     <?php echo get_theme_mod('wednesday_night_time', '7:00 PM'); ?>
                 </p>
             <?php endif; ?>
@@ -40,9 +40,6 @@
         <div class="footer-right">
             <!-- Church Info -->
             <div class="footer-info">
-                <p class="footer-address">
-                    <?php echo esc_html( get_theme_mod('church_address', '123 Main Street, Hometown, USA') ); ?>
-                </p>
                 <p class="footer-phone">
                     <a href="tel:<?php echo esc_attr( get_theme_mod('church_phone', '(555) 123-4567') ); ?>">
                         <?php echo esc_html( get_theme_mod('church_phone', '(555) 123-4567') ); ?>
@@ -52,6 +49,9 @@
                     <a href="mailto:<?php echo antispambot( get_theme_mod('church_email', 'info@yourchurch.org') ); ?>">
                         <?php echo esc_html( get_theme_mod('church_email', 'info@yourchurch.org') ); ?>
                     </a>
+                </p>
+                <p class="footer-address">
+                    <?php echo esc_html( get_theme_mod('church_address', '123 Main Street, Hometown, USA') ); ?>
                 </p>
             </div>
             <!-- Social Media (conditionally rendered) -->
