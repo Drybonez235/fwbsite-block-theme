@@ -1,83 +1,79 @@
 /* ==========================================================================
-   What We Believe — tokenized to use base.css variables only
+   What We Believe — Updated to 1basic.css Variables
    ========================================================================== */
 
 /* General Content Container */
 .entry-content {
-  max-width: var(--container-max);
-  margin: var(--space-5) auto calc(var(--space-5) * 2) auto;
-  padding: var(--space-4);
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow-md);
-  border-radius: var(--radius-md);
-  line-height: var(--leading);
-  color: var(--color-text);
-  transition: background-color var(--ease), box-shadow var(--ease);
+  max-width: var(--breakpoint-lg);
+  margin: var(--space-xl) auto calc(var(--space-xl) * 2) auto;
+  padding: var(--space-lg);
+  background-color: var(--color-background-light);
+  box-shadow: var(--box-shadow-base);
+  border-radius: var(--border-radius-base);
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
+
 .entry-content:focus-within {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--box-shadow-base);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .entry-content {
-    padding: var(--space-4);
-    margin: var(--space-4) var(--space-3) var(--space-5) var(--space-3);
-  }
-}
-@media (max-width: 480px) {
-  .entry-content {
-    padding: var(--space-3);
-    margin: var(--space-3) var(--space-1) var(--space-4) var(--space-1);
+    padding: var(--space-md);
+    margin: var(--space-lg) var(--space-sm) var(--space-xl) var(--space-sm);
   }
 }
 
 /* Page Header / Hero Section */
 .entry-header {
-  background-color: var(--color-primary-strong);
-  color: var(--color-on-primary);
-  padding: var(--space-4);
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: var(--space-lg);
   text-align: center;
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-block-size: calc(var(--space-6) * 5); /* ~15rem */
+  min-block-size: 15rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-none);;
-  margin-block-end: var(--space-5);
+  margin-block-end: var(--space-xl);
   overflow: hidden;
 }
+
 .entry-header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--color-text); /* darken with text color */
+  background: var(--gray-950);
   opacity: 0.45;
   z-index: 1;
-  transition: opacity var(--ease);
+  transition: opacity var(--transition-speed);
 }
+
 .entry-header:hover::before {
   opacity: 0.55;
 }
+
 .entry-header .header-content {
   position: relative;
   z-index: 2;
-  max-width: var(--container-max);
+  max-width: var(--breakpoint-lg);
   margin: 0 auto;
 }
+
 .entry-header .custom-page-title {
-  font-size: var(--fs-2xl);
-  color: var(--color-on-primary);
-  margin-block-end: var(--space-2);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h1);
+  color: var(--color-text-light);
+  margin-block-end: var(--space-xs);
   line-height: 1.2;
-  text-shadow: var(--shadow-sm);
 }
+
 .entry-header .intro-text {
-  font-size: var(--fs-lg);
-  color: var(--color-on-primary);
+  font-size: var(--font-size-large);
+  color: var(--color-text-light);
   margin: 0;
 }
 
@@ -85,422 +81,136 @@
 .entry-content h2,
 .entry-content h3,
 .entry-content h4 {
-  color: var(--color-text);
+  font-family: var(--font-heading);
+  color: var(--color-primary);
   line-height: 1.3;
-  margin-block-start: var(--space-6);
-  margin-block-end: var(--space-3);
-}
-.entry-content h2 {
-  font-size: var(--fs-xl);
-  border-bottom: calc(var(--space-0) / 2) solid var(--color-muted);
-  padding-block-end: var(--space-1);
-}
-.entry-content h3 {
-  font-size: var(--fs-lg);
-}
-.entry-content h4 {
-  font-size: var(--fs-md);
+  margin-block-start: var(--space-xl);
+  margin-block-end: var(--space-md);
 }
 
-/* Belief Points (single-column with larger gaps) */
+.entry-content h2 {
+  font-size: var(--font-size-h2);
+  border-bottom: 2px solid var(--gray-200);
+  padding-block-end: var(--space-xs);
+}
+
+.entry-content h3 {
+  font-size: var(--font-size-h3);
+}
+
+.entry-content h4 {
+  font-size: var(--font-size-h4);
+}
+
+/* Belief Points */
 .granular-beliefs-list {
-  margin-block-start: var(--space-5);
+  margin-block-start: var(--space-lg);
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-5);
-  padding-inline: var(--space-0);
+  gap: var(--space-lg);
 }
+
 .belief-point {
-  background-color: var(--color-surface);
-  border-inline-start: var(--space-0) solid var(--color-accent); /* 4px */
-  padding-block: var(--space-3);
-  padding-inline: var(--space-4);
-  border: var(--fs-sm);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--ease-fast), box-shadow var(--ease-fast);
+  background-color: var(--color-background-dark);
+  border-inline-start: 4px solid var(--color-secondary);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--box-shadow-base);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
-.belief-point:hover,
-.belief-point:focus-within {
-  transform: translateY(calc(var(--space-0) / -2)); /* ~-2px */
-  box-shadow: var(--shadow-md);
+
+.belief-point:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.belief-point h2,
-.belief-point h3,
-.belief-point h4 {
-  font-size: var(--fs-lg);
-  color: var(--color-text);
-  margin: 0 0 var(--space-1) 0;
+
+.belief-point h3 {
+  font-size: var(--font-size-h3);
+  margin: 0 0 var(--space-xs) 0;
 }
+
 .belief-point p {
   margin: 0;
-  color: var(--color-muted);
-}
-
-/* Lists inside belief points */
-.belief-point ul,
-.belief-point ol {
-  margin: var(--space-1) 0 0 var(--space-4);
-  color: var(--color-muted);
-}
-.belief-point li {
-  margin-block-end: var(--space-1);
-  line-height: var(--leading);
-}
-.belief-point ul li::marker {
-  color: var(--color-accent);
-}
-
-/* Core Values & Denomination Info */
-.core-values-section,
-.denomination-info-section {
-  margin-block-start: var(--space-6);
-  padding-block-start: var(--space-4);
-  border-top: calc(var(--space-0) / 4) solid var(--color-muted); /* ~1px */
-}
-.core-values-section h2,
-.denomination-info-section h3 {
-  margin-block-start: 0;
-  margin-block-end: var(--space-3);
+  color: var(--gray-700);
 }
 
 /* Links & Text Elements */
 .entry-content a {
-  color: var(--color-link);
+  color: var(--color-secondary);
   text-decoration: none;
-  transition: color var(--ease-fast), text-decoration var(--ease-fast);
+  transition: color var(--transition-speed);
 }
-.entry-content a:hover,
-.entry-content a:focus {
-  color: var(--color-primary-strong);
+
+.entry-content a:hover {
+  color: var(--color-primary);
   text-decoration: underline;
 }
-.entry-content strong,
-.entry-content b {
-  color: var(--color-text);
-}
-.entry-content em,
-.entry-content i {
-  font-style: italic;
-  color: var(--color-muted);
-}
-
-/* Accessibility */
-.screen-reader-text {
-  clip: rect(
-    calc(var(--space-0) / 4),
-    calc(var(--space-0) / 4),
-    calc(var(--space-0) / 4),
-    calc(var(--space-0) / 4)
-  ); /* ~1px each */
-  position: absolute !important;
-  block-size: calc(var(--space-0) / 4);
-  inline-size: calc(var(--space-0) / 4);
-  overflow: hidden;
-  word-wrap: normal !important;
-}
-
-/* Responsive Typography */
-@media (max-width: 768px) {
-  .entry-header .custom-page-title {
-    font-size: var(--fs-xl);
-  }
-  .entry-header .intro-text {
-    font-size: var(--fs-lg);
-  }
-  .entry-content h2 {
-    font-size: var(--fs-lg);
-  }
-  .entry-content h3 {
-    font-size: var(--fs-md);
-  }
-}
-@media (max-width: 480px) {
-  .entry-header .custom-page-title {
-    font-size: var(--fs-lg);
-  }
-  .entry-header .intro-text {
-    font-size: var(--fs-sm);
-  }
-  .entry-content h2 {
-    font-size: var(--fs-md);
-  }
-  .belief-point {
-    padding: var(--space-3);
-  }
-}
-
-/* Tighten typography for text-heavy content */
-.entry-content p {
-  margin: 0 0 var(--space-3) 0;
-  color: var(--color-muted);
-}
-.entry-content p + p {
-  margin-block-start: var(--space-0);
-}
 
 /* ==========================================================================
-   Collapsible toggles: Church Covenant + Partnerships (tokenized)
+   Collapsible Toggles
    ========================================================================== */
 
-/* Component-level design tokens (override these on a per-skin basis if needed) */
 .collapsible-toggle {
-  --toggle-bg: var(--color-surface);
-  --toggle-border: rgba(17, 24, 39, 0.06);
+  --toggle-bg: var(--color-background-light);
   --toggle-summary-bg: var(--color-primary);
-  --toggle-summary-color: var(--color-on-primary);
-  --toggle-summary-hover-bg: var(--color-primary-strong);
-  --toggle-summary-padding-block: var(--space-3);
-  --toggle-summary-padding-inline: var(--space-4);
-  --toggle-summary-font-size: var(--fs-lg);
-  --toggle-summary-icon-size: 1rem;
-  --toggle-content-padding: var(--space-4);
-  --toggle-gap: var(--space-3);
-}
-
-/* Base wrapper for our details elements */
-details.collapsible-toggle {
-  background-color: var(--toggle-bg);
-  border: 1px solid var(--toggle-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  margin-block-start: var(--space-5);
+  --toggle-summary-color: var(--color-text-light);
+  margin-block-start: var(--space-lg);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-base);
   overflow: hidden;
-  transition: box-shadow var(--ease), transform var(--ease-fast);
 }
 
-/* Summary (click/tap area) */
 details.collapsible-toggle > summary {
-  list-style: none; /* remove default marker */
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--toggle-gap);
-  padding: var(--toggle-summary-padding-block) var(--toggle-summary-padding-inline);
+  padding: var(--space-md) var(--space-lg);
   background: var(--toggle-summary-bg);
   color: var(--toggle-summary-color);
-  font-size: var(--toggle-summary-font-size);
-  font-weight: 600;
-  border-radius: 0;
-  transition: background-color var(--ease), color var(--ease), box-shadow var(--ease);
-}
-
-/* Remove the native marker on WebKit and Firefox */
-details.collapsible-toggle > summary::-webkit-details-marker {
-  display: none;
-}
-details.collapsible-toggle > summary::marker {
-  font-size: 0;
-}
-
-/* Focus / hover styles for keyboard accessibility */
-details.collapsible-toggle > summary:focus,
-details.collapsible-toggle > summary:hover {
-  background: var(--toggle-summary-hover-bg);
-  outline: none;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) inset;
-  color: var(--toggle-summary-color);
-}
-
-/* Simple chevron indicator via ::after — rotates when open */
-details.collapsible-toggle > summary::after {
-  content: "▾";
-  display: inline-block;
-  margin-left: var(--space-2);
-  font-size: var(--toggle-summary-icon-size);
-  line-height: 1;
-  transition: transform var(--ease);
-  color: var(--toggle-summary-color);
-  transform-origin: center;
-}
-
-/* Rotate when open */
-details.collapsible-toggle[open] > summary::after {
-  transform: rotate(180deg);
-}
-
-/* Content area inside the details */
-details.collapsible-toggle > section,
-details.collapsible-toggle > div {
-  padding: var(--toggle-content-padding);
-  background-color: var(--toggle-bg);
-  color: var(--color-text);
-  line-height: var(--leading);
-  border-top: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-/* Church Covenant specific small tweaks */
-.church-covenant-toggle {
-  --toggle-summary-bg: var(--color-accent);
-  --toggle-summary-color: var(--color-on-accent);
-  --toggle-summary-hover-bg: color-mix(in srgb, var(--color-accent) 80%, black 10%);
-}
-
-/* Partnerships specific small tweaks */
-.partnerships-toggle {
-  --toggle-summary-bg: var(--color-primary);
-  --toggle-summary-color: var(--color-on-primary);
-  --toggle-summary-hover-bg: var(--color-primary-strong);
-}
-
-/* Partnerships list layout */
-.partnerships-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-  margin-block-start: var(--space-2);
-}
-
-/* Single affiliation block */
-.affiliation {
-  padding: var(--space-3);
-  border-left: calc(var(--space-0) * 4) solid var(--color-primary);
-  background-color: rgba(0, 0, 0, 0.01);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--ease-fast), box-shadow var(--ease-fast);
-}
-.affiliation:hover,
-.affiliation:focus-within {
-  transform: translateY(calc(var(--space-0) / -2));
-  box-shadow: var(--shadow-md);
-}
-
-/* Affiliation heading and description */
-.affiliation-name {
-  margin: 0 0 var(--space-1) 0;
-  font-size: var(--fs-md);
-  color: var(--color-text);
-  font-weight: 600;
-}
-.affiliation-description {
-  color: var(--color-muted);
-  margin: 0;
-  line-height: var(--leading);
-}
-
-/* Church covenant content block */
-.church-covenant-content {
-  max-width: 65ch; /* comfortable measure for long text */
-  margin: 0;
-  color: var(--color-muted);
-}
-
-/* Small helper for text wrappers so paragraphs get spacing */
-.church-covenant-content p,
-.affiliation-description p {
-  margin: 0 0 var(--space-2) 0;
-}
-
-/* Responsive adjustments */
-@media (min-width: 880px) {
-  /* On larger screens allow 2-column affiliations (if many are shown) */
-  .partnerships-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-4);
-  }
-  .affiliation {
-    padding: var(--space-4);
-  }
-}
-
-/* Tighter spacing on small screens */
-@media (max-width: 480px) {
-  details.collapsible-toggle > summary {
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--fs-md);
-  }
-  details.collapsible-toggle > section {
-    padding: var(--space-3);
-  }
-  .affiliation {
-    padding: var(--space-3);
-  }
-}
-
-/* ==========================================================================
-   Collapsible sizing + spacing tweaks
-   - Bigger summaries
-   - More space between dropdown blocks
-   - Larger covenant text
-   ========================================================================== */
-
-/* Increase vertical spacing between each details block */
-details.collapsible-toggle {
-  /* larger gap above and below each dropdown */
-  margin-block-start: var(--space-6); /* greater top spacing */
-  margin-block-end: var(--space-4);   /* ample bottom spacing */
-}
-
-/* Make summary area more prominent and easier to tap */
-details.collapsible-toggle > summary {
-  /* increase the summary padding and minimum size (tokenized) */
-  padding: calc(var(--toggle-summary-padding-block, var(--space-3)) * 1.25)
-           calc(var(--toggle-summary-padding-inline, var(--space-4)) * 1.1);
-  min-height: 3.5rem; /* consistent tappable area */
+  font-family: var(--font-heading);
+  font-size: var(--font-size-large);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: calc(var(--toggle-gap, var(--space-3)) * 1.1);
-  /* bump the summary font-size slightly (keeps tokenized override) */
-  font-size: calc(var(--toggle-summary-font-size, var(--fs-lg)) * 1.1);
+  transition: background-color var(--transition-speed);
 }
 
-/* Make the chevron a bit larger to suit the larger summary */
-details.collapsible-toggle > summary::after {
-  font-size: 1.1rem;
-  margin-left: var(--space-3);
-}
-
-/* Partnerships: increase spacing between affiliation blocks */
-.partnerships-list {
-  gap: var(--space-5); /* larger gap between affiliation cards */
-  margin-block-start: var(--space-3);
-}
-
-/* Affiliation card - slightly larger padding on bigger screens */
-.affiliation {
-  padding: var(--space-4);
-}
-@media (max-width: 480px) {
-  .affiliation {
-    padding: var(--space-3);
-  }
-}
-
-/* Church Covenant — larger summary + larger content type */
-.church-covenant-toggle {
-  /* Use stronger tokens for covenant so it stands out */
-  --toggle-summary-padding-block: var(--space-4);
-  --toggle-summary-padding-inline: var(--space-5);
-  --toggle-summary-font-size: var(--fs-xl); /* bigger heading for the covenant summary */
-  margin-block-start: var(--space-4);
-  margin-block-end: var(--space-4);
-}
-
-/* Increase the covenant body type for readability */
-.church-covenant-content {
-  font-size: var(--fs-lg);       /* larger paragraph text */
-  line-height: calc(var(--leading) * 1.15);
-  color: var(--color-text);      /* make primary text color for better contrast */
-  max-width: 70ch;               /* keep comfortable measure */
-  padding-top: var(--space-1);
-}
-
-/* Slight visual emphasis for long covenant paragraphs */
-.church-covenant-content p {
-  margin: 0 0 var(--space-3) 0;
-  font-size: inherit;
-}
-
-/* Keep accessible focus & hover behavior */
-details.collapsible-toggle > summary:focus,
 details.collapsible-toggle > summary:hover {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  background: var(--gray-900); /* Darken primary on hover */
 }
 
-/* Optional: if you want the partnerships summary slightly larger than default */
-.partnerships-toggle > summary {
-  --toggle-summary-font-size: calc(var(--fs-lg) * 1.05);
-  --toggle-summary-padding-block: var(--space-4);
-  --toggle-summary-padding-inline: var(--space-4);
+details.collapsible-toggle > div,
+details.collapsible-toggle > section {
+  padding: var(--space-lg);
+  background-color: var(--color-background-light);
+  line-height: 1.6;
+}
+
+/* Church Covenant specific */
+.church-covenant-toggle {
+  --toggle-summary-bg: var(--color-secondary);
+}
+
+.church-covenant-content {
+  font-size: var(--font-size-large);
+  color: var(--gray-800);
+  max-width: 70ch;
+}
+
+/* Partnerships / Affiliations */
+.affiliation {
+  padding: var(--space-md);
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--gray-100);
+  margin-bottom: var(--space-md);
+}
+
+.affiliation-name {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h4);
+  color: var(--color-primary);
+}
+
+/* Responsive Typography Fixes */
+@media (max-width: 768px) {
+  .entry-header .custom-page-title { font-size: var(--font-size-h2); }
+  .entry-content h2 { font-size: var(--font-size-h3); }
 }
