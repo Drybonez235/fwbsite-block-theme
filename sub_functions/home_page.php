@@ -163,10 +163,10 @@ function fwbsite_customize_register($wp_customize) {
             'sanitize_callback' => 'esc_url_raw',
         ));
 
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'welcome_image', array(
-            'label'    => __('Welcome Image', 'fwbsite'),
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'service_image', array(
+            'label'    => __('Worship Image', 'fwbsite'),
             'section'  => 'church_services_section',
-            'settings' => 'welcome_image',
+            'settings' => 'service_image',
         )));
 
     // Sunday School Time
