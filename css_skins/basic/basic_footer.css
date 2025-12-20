@@ -258,7 +258,7 @@
 .social-links a:focus,
 .footer-phone a:focus,
 .footer-email a:focus {
-    outline: 2px solid var(--color-secondary);
+    outline: 2px solid var(--color-tertiary);
     outline-offset: 2px;
 }
 
