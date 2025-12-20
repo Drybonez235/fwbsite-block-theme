@@ -3,7 +3,7 @@
    ============================= */
 
 .service-times-section {
-    background: var(--gray-800);
+    background: var(--gray-950);
     margin-top: var(--space-xl); /* Remove top/bottom padding to let hero go full-width */
     padding-bottom: var(--space-lg);
     max-width: none; /* Allow it to be full-width */
@@ -118,7 +118,7 @@
   font-family: var(--font-heading);
   font-size: var(--font-size-h4);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--grey-800);
 }
 
 /* Card Body */

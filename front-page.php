@@ -60,11 +60,11 @@
                 <span class="hero-time-large"><?php echo esc_html( get_theme_mod('sunday_service_time', '11:00 AM') ); ?></span>
                 
                 <p class="hero-description">
-                    <?php echo get_theme_mod('welcome_message', 'A time of vibrant worship, engaging teaching, and communion. Children’s Church and Nursery are available.'); ?>
+                    <?php echo get_theme_mod('service_message', 'A time of vibrant worship, engaging teaching, and communion. Children’s Church and Nursery are available.'); ?>
                 </p>
             </div>
         </div>
-        <?php if ( get_theme_mod('welcome_image') ) : ?>
+        <?php if ( get_theme_mod('service_image') ) : ?>
             <div class="hero-background-image" style="background-image: url('<?php echo esc_url( get_theme_mod('welcome_image') ); ?>');"></div>
         <?php endif; ?>
     </div>

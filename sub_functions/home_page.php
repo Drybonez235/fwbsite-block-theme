@@ -48,40 +48,40 @@ function fwbsite_customize_register($wp_customize) {
     ));
 
     // Church Description
-    $wp_customize->add_setting('church_description', array(
-        'default' => 'Welcome to our church!',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ));
-    $wp_customize->add_control('church_description', array(
-        'label'   => __('Church Description', 'fwbsite'),
-        'section' => 'church_description_section',
-        'type'    => 'textarea',
-    ));
+    // $wp_customize->add_setting('church_description', array(
+    //     'default' => 'Welcome to our church!',
+    //     'sanitize_callback' => 'sanitize_textarea_field',
+    // ));
+    // $wp_customize->add_control('church_description', array(
+    //     'label'   => __('Church Description', 'fwbsite'),
+    //     'section' => 'church_description_section',
+    //     'type'    => 'textarea',
+    // ));
 
-    //Church Welcome message.
-            $wp_customize->add_setting('welcome_message', array(
-            'default'           => 'Worship with us!',
-            'sanitize_callback' => 'sanitize_textarea_field',
-        ));
+    // //Church Welcome message.
+    //         $wp_customize->add_setting('welcome_message', array(
+    //         'default'           => 'Worship with us!',
+    //         'sanitize_callback' => 'sanitize_textarea_field',
+    //     ));
 
-        $wp_customize->add_control('welcome_message', array(
-            'label'   => __('Welcome Message', 'fwbsite'),
-            'section' => 'church_description_section',
-            'type'    => 'textarea',
-        ));
+    //     $wp_customize->add_control('welcome_message', array(
+    //         'label'   => __('Welcome Message', 'fwbsite'),
+    //         'section' => 'church_description_section',
+    //         'type'    => 'textarea',
+    //     ));
 
 
-        //Church welcome image
+    //     //Church welcome image
 
-        $wp_customize->add_setting('welcome_image', array(
-            'sanitize_callback' => 'esc_url_raw',
-        ));
+    //     $wp_customize->add_setting('welcome_image', array(
+    //         'sanitize_callback' => 'esc_url_raw',
+    //     ));
 
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'welcome_image', array(
-            'label'    => __('Welcome Image', 'fwbsite'),
-            'section'  => 'church_description_section',
-            'settings' => 'welcome_image',
-        )));
+    //     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'welcome_image', array(
+    //         'label'    => __('Welcome Image', 'fwbsite'),
+    //         'section'  => 'church_description_section',
+    //         'settings' => 'welcome_image',
+    //     )));
 
         //Church adress
             $wp_customize->add_setting('church_address', array(
@@ -143,6 +143,31 @@ function fwbsite_customize_register($wp_customize) {
         'panel'    => 'church_info_panel',
         'priority' => 20,
     ));
+
+     //Church Welcome message.
+            $wp_customize->add_setting('service_message', array(
+            'default'           => 'Worship with us!',
+            'sanitize_callback' => 'sanitize_textarea_field',
+        ));
+
+        $wp_customize->add_control('service_message', array(
+            'label'   => __('Worship Description', 'fwbsite'),
+            'section' => 'church_services_section',
+            'type'    => 'textarea',
+        ));
+
+
+        //Church welcome image
+
+        $wp_customize->add_setting('service_image', array(
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'welcome_image', array(
+            'label'    => __('Welcome Image', 'fwbsite'),
+            'section'  => 'church_services_section',
+            'settings' => 'welcome_image',
+        )));
 
     // Sunday School Time
     $wp_customize->add_setting('sunday_school_time', array(
