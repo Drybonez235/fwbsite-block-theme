@@ -65,7 +65,7 @@
             </div>
         </div>
         <?php if ( get_theme_mod('service_image') ) : ?>
-            <div class="hero-background-image" style="background-image: url('<?php echo esc_url( get_theme_mod('welcome_image') ); ?>');"></div>
+            <div class="hero-background-image" style="background-image: url('<?php echo esc_url( get_theme_mod('service_image') ); ?>');"></div>
         <?php endif; ?>
     </div>
 
