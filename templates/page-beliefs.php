@@ -77,7 +77,7 @@ if (! empty($wweb_background_image)) {
     ?>
 
     <!-- Wrap the beliefs list with native <details>/<summary> so it toggles without JS -->
-    <details class="beliefs-toggle" aria-label="<?php esc_attr_e('Toggle core beliefs', 'fwbsite'); ?>">
+    <div class="beliefs-toggle" aria-label="<?php esc_attr_e('Toggle core beliefs', 'fwbsite'); ?>">
       <summary class="beliefs-summary">
         <?php echo esc_html($wweb_page_title); ?>
       </summary>
@@ -162,7 +162,7 @@ if (! empty($wweb_background_image)) {
           <p><?php echo wp_kses_post($wweb_belief_the_christian_sabbath); ?></p>
         </div>
       </section>
-    </details>
+    </div>
 
     <?php if ( ! empty( $wweb_display_church_covenant ) ) : ?>
   <details class="church-covenant-toggle" aria-label="<?php esc_attr_e( 'Church Covenant', 'fwbsite' ); ?>">
