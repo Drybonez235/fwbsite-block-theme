@@ -1,14 +1,15 @@
 /* Events page — Updated to use 1basic.css variables */
 
-/* Base wrapper */
-.church-events {
-  background: linear-gradient(
-    180deg,
-    var(--color-background-light) 0%,
-    var(--gray-100) 100%
-  );
-  padding: var(--space-xl) var(--space-sm);
-  color: var(--color-text-dark);
+/* Main Card Style */
+.church-event {
+  display: flex; /* Switched to flex for better horizontal flow like the image */
+  align-items: flex-start;
+  gap: var(--space-md);
+  background: var(--color-background-light);
+  padding: var(--space-sm);
+  border-radius: var(--border-radius-base);
+  border: 1px solid var(--gray-400); /* Thinner, lighter border from image */
+  transition: box-shadow var(--transition-speed);
 }
 
 /* Inner container aligns content and constrains width */
@@ -40,24 +41,18 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Media block (image) */
+/* Larger, Square Image */
 .church-event__media {
-  display: block;
-  width: 100%;
-  height: 100%;
+  flex: 0 0 180px; /* Increased size to match screenshot proportions */
+  height: 180px;
   border-radius: var(--border-radius-base);
   overflow: hidden;
-  background: var(--gray-200);
-  flex-shrink: 0;
 }
 
-/* Responsive & accessible image */
 .church-event__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: transform var(--transition-speed) ease;
 }
 
 /* Gentle scale on hover of image */
