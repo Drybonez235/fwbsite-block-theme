@@ -136,10 +136,7 @@
 .footer-email a {
     color: var(--color-text-dark);
     text-decoration: none;
-    transition:
-        color var(--transition-speed),
-        background-color var(--transition-speed),
-        box-shadow var(--transition-speed);
+    transition: box-shadow var(--transition-speed);
     padding-inline: var(--space-xs);
     border-radius: var(--border-radius-base);
 }
