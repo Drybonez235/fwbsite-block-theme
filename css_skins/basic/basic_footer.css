@@ -185,8 +185,6 @@
     box-shadow: var(--box-shadow-base);
 }
 .social-links a:hover {
-    background-color: var(--color-secondary); /* Using secondary color for hover accent */
-    color: var(--color-text-dark); /* Dark text on the secondary color (or could use light text here) */
     transform: translateY(-2px);
     box-shadow: var(--box-shadow-base);
 }
