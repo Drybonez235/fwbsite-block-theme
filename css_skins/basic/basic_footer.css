@@ -140,12 +140,6 @@
     padding-inline: var(--space-xs);
     border-radius: var(--border-radius-base);
 }
-.footer-phone a:hover,
-.footer-email a:hover {
-    /* On hover, use the secondary color for background, and the primary (darker) for text */
-    color: var(--color-primary);
-    background-color: var(--color-tertiary);
-}
 
 /* Social */
 .footer-social {
