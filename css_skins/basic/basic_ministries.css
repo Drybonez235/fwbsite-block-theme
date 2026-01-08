@@ -1,186 +1,155 @@
-/* Ministries — tokenized to use base.css variables only */
+/* Ministries — Updated to use 1basic.css variables */
 
 .ministries {
   background: linear-gradient(
     180deg,
-    var(--color-bg) 0%,
-    var(--color-surface) 100%
+    var(--color-background-light) 0%,
+    var(--gray-100) 100%
   );
-  padding: var(--space-5);
-  color: var(--color-text);
-  border-radius: var(--radius-none);
-  border: var(--radius-none);
-  box-shadow: var(--shadow-sm);
+  padding: var(--space-xl) var(--space-sm);
+  color: var(--color-text-dark);
 }
 
 /* Constrain content but keep each ministry as its own full-width row */
 .ministries__container {
-  max-width: var(--container-max);
+  max-width: var(--breakpoint-lg);
   margin-inline: auto;
   width: 100%;
   display: grid;
-  gap: var(--space-6); /* generous spacing between sections */
+  gap: var(--space-xl); /* Generous spacing between sections */
 }
 
-/* Each ministry gets its own large card area (full width of the container) */
+/* Each ministry gets its own large card area */
 .ministry {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-areas: "media details";
-  gap: var(--space-4);
+  gap: 0; /* Gap handled by padding to keep clean borders */
   align-items: stretch;
-  background: var(--color-surface);
-  border-radius: var(--radius-md);
-  border: calc(var(--space-0) / 4) solid var(--color-muted);
-  box-shadow: var(--shadow-sm);
+  background: var(--color-background-light);
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--box-shadow-base);
   overflow: hidden;
-  transition: transform var(--ease-fast), box-shadow var(--ease-fast);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  border: 1px solid var(--gray-200);
 }
 
-/* Slight elevation on hover to emphasize the section */
+/* Slight elevation on hover */
 .ministry:hover {
-  transform: translateY(calc(var(--space-0) * -1.5)); /* ~-6px */
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Alternate layout: flip media/details for even items to create visual variation */
+/* Alternate layout: flip media/details for even items */
 .ministry:nth-child(even) {
   grid-template-columns: 60% 40%;
   grid-template-areas: "details media";
 }
 
-/* Media column: large visual area for the chosen image */
+/* Media column: large visual area */
 .ministry__media {
   grid-area: media;
   position: relative;
-  min-block-size: calc(
-    var(--space-6) * 8 + var(--space-4) + var(--space-3)
-  ); /* ~420px */
-  background: var(--color-surface);
+  min-height: 400px;
+  background: var(--gray-300);
   overflow: hidden;
   display: block;
 }
 
-/* Image fills the media area */
 .ministry__image {
-  inline-size: 100%;
-  block-size: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform var(--ease);
+  transition: transform var(--transition-speed) ease-in-out;
 }
 
-/* Gentle zoom on hover */
 .ministry:hover .ministry__image {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* Overlay sits on top of the image (title + catchphrase) */
+/* Overlay sits on top of the image */
 .ministry__overlay {
   position: absolute;
   inset-inline: 0;
   inset-block-end: 0;
-  padding: var(--space-4);
+  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
-  align-items: flex-start;
-  /* gradient for legibility using currentColor */
-  color: var(--color-text);
-  background: linear-gradient(180deg, transparent 0%, currentColor 100%);
-  opacity: 0.62;
-  box-sizing: border-box;
+  gap: var(--space-xxs);
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: var(--color-text-light);
 }
 
-/* Title over the image */
 .ministry__title {
   margin: 0;
-  color: var(--color-on-primary);
-  font-size: var(--fs-4xl);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
   line-height: 1.1;
-  text-shadow: var(--shadow-sm);
 }
 
-/* Catchphrase under the title */
 .ministry__catch {
   margin: 0;
-  color: var(--color-on-primary);
-  font-size: var(--fs-2xl);
+  font-family: var(--font-body);
+  font-size: var(--font-size-h3);
+  color: var(--color-secondary); /* Gold accent for the catchphrase */
+  font-weight: var(--font-weight-regular);
 }
 
-/* Details column: roomy area for the full description and info */
+/* Details column */
 .ministry__details {
   grid-area: details;
-  padding: var(--space-4);
+  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
-  color: var(--color-muted);
-  font-size: var(--fs-md);
-  line-height: var(--leading);
-  background: transparent;
+  justify-content: center;
+  gap: var(--space-sm);
+  color: var(--gray-800);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
 }
 
-/* Card-like inner detail panel to create visual separation (optional) */
-.ministry__details-inner {
-  background: transparent;
-  padding: 0;
-  border-radius: var(--radius-sm);
-}
-
-/* Paragraph spacing inside details */
 .ministry__details p {
-  margin: 0 0 var(--space-2) 0;
+  margin: 0;
 }
 
-/* Make card keyboard-focus friendly */
+/* Focus state for accessibility */
 .ministry:focus-within {
-  outline: var(--space-0) solid var(--color-primary);
-  outline-offset: var(--space-0);
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
 }
 
-/* Responsive: stack media above details on narrower screens */
+/* --- Responsive Layouts --- */
+
 @media (max-width: 900px) {
-  .ministry {
+  .ministry, .ministry:nth-child(even) {
     grid-template-columns: 1fr;
     grid-template-areas:
       "media"
       "details";
   }
 
-  /* Increase media height on mobile for a more immersive image */
   .ministry__media {
-    min-block-size: calc(var(--space-6) * 6 + var(--space-3)); /* ~320px */
-  }
-
-  .ministry__overlay {
-    padding: var(--space-3);
-  }
-
-  .ministry__details {
-    padding: var(--space-3);
+    min-height: 300px;
   }
 
   .ministries__container {
-    gap: var(--space-4);
+    gap: var(--space-lg);
   }
 }
 
-/* Tighter layout for small phones */
 @media (max-width: 640px) {
   .ministries {
-    padding: var(--space-4);
+    padding: var(--space-md) var(--space-xs);
   }
 
   .ministry__title {
-    font-size: var(--fs-xl);
+    font-size: var(--font-size-h2);
   }
 
   .ministry__catch {
-    font-size: var(--fs-md);
-  }
-
-  .ministry__details {
-    font-size: var(--fs-sm);
+    font-size: var(--font-size-h4);
   }
 }
