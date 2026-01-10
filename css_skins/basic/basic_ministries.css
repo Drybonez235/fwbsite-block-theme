@@ -1,37 +1,27 @@
 /* Ministries — Updated to use 1basic.css variables */
 
 .ministries {
-  background: linear-gradient(
-    180deg,
-    var(--color-background-light) 0%,
-    var(--gray-100) 100%
-  );
+  background-color: var(--color-background-light);
   padding: var(--space-xl) var(--space-sm);
-  color: var(--color-text-dark);
 }
 
-/* Constrain content but keep each ministry as its own full-width row */
 .ministries__container {
   max-width: var(--breakpoint-lg);
   margin-inline: auto;
-  width: 100%;
-  display: grid;
-  gap: var(--space-xl); /* Generous spacing between sections */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
 }
 
-/* Each ministry gets its own large card area */
+/* Main Card Style */
 .ministry {
   display: grid;
-  grid-template-columns: 40% 60%;
-  grid-template-areas: "media details";
-  gap: 0; /* Gap handled by padding to keep clean borders */
-  align-items: stretch;
+  grid-template-columns: 1fr 1.2fr; /* Creates the wider text area from the image */
   background: var(--color-background-light);
   border-radius: var(--border-radius-base);
-  box-shadow: var(--box-shadow-base);
+  border: 1px solid var(--gray-400); 
   overflow: hidden;
-  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-  border: 1px solid var(--gray-200);
+  align-items: stretch;
 }
 
 /* Slight elevation on hover */
@@ -46,14 +36,11 @@
   grid-template-areas: "details media";
 }
 
-/* Media column: large visual area */
+/* Media Block - Image on the Left */
 .ministry__media {
-  grid-area: media;
   position: relative;
-  min-height: 400px;
-  background: var(--gray-300);
+  min-height: 400px; /* Ensures a large visual presence */
   overflow: hidden;
-  display: block;
 }
 
 .ministry__image {
@@ -61,29 +48,26 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform var(--transition-speed) ease-in-out;
 }
 
 .ministry:hover .ministry__image {
   transform: scale(1.05);
 }
 
-/* Overlay sits on top of the image */
+/* Overlay Text (Title and Catchphrase) - Positioned at bottom of image */
 .ministry__overlay {
   position: absolute;
-  inset-inline: 0;
-  inset-block-end: 0;
-  padding: var(--space-lg);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xxs);
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
   color: var(--color-text-light);
 }
 
 .ministry__title {
   margin: 0;
-  font-family: var(--font-heading);
+  font-family: var(--font-body); /* Matching the sans-serif in the screenshot */
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-bold);
   line-height: 1.1;
@@ -91,28 +75,26 @@
 
 .ministry__catch {
   margin: 0;
-  font-family: var(--font-body);
-  font-size: var(--font-size-h3);
-  color: var(--color-secondary); /* Gold accent for the catchphrase */
+  font-size: var(--font-size-large);
   font-weight: var(--font-weight-regular);
+  opacity: 0.9;
 }
 
-/* Details column */
+/* Details Column - Aligning text to the top */
 .ministry__details {
-  grid-area: details;
   padding: var(--space-lg);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: var(--space-sm);
-  color: var(--gray-800);
-  font-family: var(--font-body);
-  font-size: var(--font-size-base);
-  line-height: 1.6;
+  justify-content: flex-start; /* Matches screenshot: text starts at the top */
+  background: var(--color-background-light);
 }
 
 .ministry__details p {
   margin: 0;
+  color: var(--gray-700);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
 }
 
 /* Focus state for accessibility */
