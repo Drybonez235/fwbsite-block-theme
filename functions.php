@@ -37,3 +37,12 @@ function mychurch_setup() {
     ]);
 }
 add_action('after_setup_theme', 'mychurch_setup');
+
+
+function my_theme_setup() {
+    // Adds support for editor styles and default block styles
+    add_theme_support( 'wp-block-styles' );
+    
+    // Adds support for responsive embedded content (like YouTube)
+    add_theme_support( 'responsive-embeds' );
+}
