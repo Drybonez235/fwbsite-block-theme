@@ -52,10 +52,6 @@
   display: block;
 }
 
-.ministry:hover .ministry__image {
-  transform: scale(1.05);
-}
-
 /* Overlay Text (Title and Catchphrase) - Positioned at bottom of image */
 .ministry__overlay {
   position: absolute;
