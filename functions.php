@@ -45,4 +45,6 @@ function my_theme_setup() {
     
     // Adds support for responsive embedded content (like YouTube)
     add_theme_support( 'responsive-embeds' );
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'style.css' );
 }
