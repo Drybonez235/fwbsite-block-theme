@@ -13,10 +13,11 @@
   gap: var(--space-lg);
 }
 
-/* Main Card Style */
 .ministry {
   display: grid;
-  grid-template-columns: 1fr 1.2fr; /* Creates the wider text area from the image */
+  /* 1. Set the first column to a fixed max-width (e.g., 350px) */
+  /* This prevents the image from becoming "super big" on wide screens */
+  grid-template-columns: minmax(200px, 350px) 1fr; 
   background: var(--color-background-light);
   border-radius: var(--border-radius-base);
   border: 1px solid var(--gray-400); 
@@ -36,17 +37,18 @@
   grid-template-areas: "details media";
 }
 
-/* Media Block - Image on the Left */
 .ministry__media {
   position: relative;
-  min-height: 400px; /* Ensures a large visual presence */
+  /* 2. Force the container to be a square */
+  aspect-ratio: 1 / 1; 
+  width: 100%;
   overflow: hidden;
 }
 
 .ministry__image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensures image fills the square without stretching */
   display: block;
 }
 
