@@ -270,3 +270,8 @@
         text-align: right;
     }
 }
+
+/* The footer stays at its natural size but is pushed to the bottom */
+footer {
+  flex-shrink: 0;
+}

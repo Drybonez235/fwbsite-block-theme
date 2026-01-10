@@ -168,3 +168,10 @@
     padding: var(--space-xs);
   }
 }
+
+/* This targets the main content area (where your events live) */
+/* It tells the content to grow and fill all available empty space */
+main, 
+.church-events {
+  flex: 1 0 auto;
+}
